@@ -29,6 +29,7 @@ class UsersRepository implements IUsersRepository {
       updated_at: new Date(),
     });
 
+    console.log(user);
     this.users.push(user);
   }
 
@@ -49,7 +50,7 @@ class UsersRepository implements IUsersRepository {
   }
 
   list(): User[] {
-    // Complete aqui
+    return this.users;
   }
 }
 
