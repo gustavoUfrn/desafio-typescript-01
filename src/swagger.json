@@ -1,0 +1,11 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Cadastro e listagem de usuarios",
+        "description": "Cadastro e listagem de usuarios",
+        "version": "1.0.0",
+        "contact": {
+            "email": "mxgugaa@gmail.com"
+        }
+    }
+}
