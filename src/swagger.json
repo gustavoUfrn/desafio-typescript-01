@@ -1,11 +1,49 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Cadastro e listagem de usuarios",
-        "description": "Cadastro e listagem de usuarios",
+        "title": "Create and list users",
+        "description": "User creator API",
         "version": "1.0.0",
         "contact": {
             "email": "mxgugaa@gmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": ["Users"],
+                "summary": "Create a user",
+                "description": "Create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Random User",
+                                    "email": "random@email.com"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "201": {
+                    "description": "Created"
+                },
+                "500": {
+                    "description": "Error"
+                }
+            }
         }
     }
 }
