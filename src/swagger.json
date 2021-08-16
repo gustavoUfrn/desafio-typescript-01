@@ -60,10 +60,10 @@
                                             "type": "boolean"
                                         },
                                         "created_at": {
-                                            "type": "date-time"
+                                            "type": "string"
                                         },
                                         "updated_at": {
-                                            "type": "date-time"
+                                            "type": "string"
                                         }
                                     }
                                 },
@@ -81,11 +81,11 @@
                     "500": {
                         "description": "Email ja está sendo utilizado",
                         "content": {
-                           "application/json": {
-                               "example": {
-                                   "error": "User already exists!"
-                               }
-                           }
+                            "application/json": {
+                                "example": {
+                                    "error": "User already exists!"
+                                }
+                            }
                         }
                     }
                 }
@@ -113,7 +113,6 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
                                     "items": {
                                         "type": "object",
                                         "properties": {
@@ -123,14 +122,39 @@
                                             "email": {
                                                 "type": "string"
                                             }
-                                        }
+                                        },
+                                        "example": [
+                                            {
+                                                "admin": false,
+                                                "name": "Gustavo Alessandro",
+                                                "email": "mxgugaa@gmail.com",
+                                                "created_at": "2021-08-12T16:46:08.848Z",
+                                                "updated_at": "2021-08-12T16:46:08.848Z",
+                                                "id": "710b9937-1e75-42c8-9b6f-f6d2dd31b700"
+                                            },
+                                            {
+                                                "admin": "false",
+                                                "name": "Rocket Racoon",
+                                                "email": "rora@gmail.com",
+                                                "created_at": "2021-08-12T16:46:08.848Z",
+                                                "updated_at": "2021-08-12T16:46:08.848Z",
+                                                "id": "1c0e79ba-0656-4275-8427-fbbc498cce0f"
+                                            }
+                                        ]
                                     }
                                 }
                             }
                         }
                     },
                     "500": {
-                        "description": "Error: Internal Server Error"
+                        "description": "Error: Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "error": "You need to be an admin user!"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -171,12 +195,26 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "admin": false,
+                                    "name": "Nome aleatorio",
+                                    "email": "email@aleatorio.com",
+                                    "created_at":"2021-08-12T16:46:08.848Z",
+                                    "updated_at": "2021-08-12T16:46:08.848Z"
                                 }
                             }
                         }
                     },
                     "500": {
-                        "description": "Error: Internal Server Error"
+                        "description": "Error: Internal Server Error",
+                        "content":{
+                            "application/json":{
+                                "example": {
+                                    "error": "User id not found"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -216,12 +254,26 @@
                                             }
                                         }
                                     }
+                                },
+                                "example": {
+                                    "admin": true,
+                                    "name": "Nome aleatorio",
+                                    "email": "email@aleatorio.com",
+                                    "created_at": "2021-08-12T16:46:08.848Z",
+                                    "updated_at": "2021-08-12T16:46:08.848Z"
                                 }
                             }
                         }
                     },
                     "500": {
-                        "description": "Error: Internal Server Error"
+                        "description": "Error: Internal Server Error",
+                        "content":{
+                            "application/json": {
+                                "example": {
+                                    "error": "User id not found"
+                                }
+                            }
+                        }
                     }
                 }
             }
